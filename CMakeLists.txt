@@ -27,7 +27,7 @@ elseif(("${CMAKE_SYSTEM}" MATCHES "Linux") AND ("${CMAKE_SYSTEM_PROCESSOR}" MATC
   # There is a bug with the shipping GLES v1 library where 3 of the symbols are misnamed.
   # If you have an arm/ES device without this problem, don't enable this macro.
   # TODO: Need way to identify Raspberry Pi/Broadcom
-  add_definitions(-DSDL_GPU_USE_BROADCOM_RASPBERRYPI_WORKAROUND)
+#  add_definitions(-DSDL_GPU_USE_BROADCOM_RASPBERRYPI_WORKAROUND)
 
   set(SDL_gpu_DEFAULT_BUILD_DEMOS OFF)
   set(SDL_gpu_DEFAULT_DISABLE_OPENGL ON)
@@ -41,7 +41,7 @@ endif()
 option(SDL_gpu_INSTALL "Install SDL_gpu libs, includes, and CMake scripts" ${SDL_gpu_INSTALL_BY_DEFAULT})
 #option(SDL_gpu_BUILD_DEBUG "Build with debugging symbols" ON)
 option(SDL_gpu_BUILD_DEMOS "Build SDL_gpu demo programs" ${SDL_gpu_DEFAULT_BUILD_DEMOS})
-option(SDL_gpu_BUILD_TESTS "Build SDL_gpu test programs" OFF)
+option(SDL_gpu_BUILD_TESTS "Build SDL_gpu test programs" ON)
 option(SDL_gpu_BUILD_VIDEO_TEST "Build SDL_gpu video test program (requires FFMPEG)" OFF)
 option(SDL_gpu_BUILD_TOOLS "Build SDL_gpu tool programs" OFF)
 option(SDL_gpu_USE_SDL1 "Use SDL 1.2 headers and library instead of SDL 2" OFF)
@@ -52,9 +52,9 @@ option(SDL_gpu_DISABLE_OPENGL_1 "Disable OpenGL 1.X renderer" OFF)
 option(SDL_gpu_DISABLE_OPENGL_2 "Disable OpenGL 2.X renderer" OFF)
 option(SDL_gpu_DISABLE_OPENGL_3 "Disable OpenGL 3.X renderer" OFF)
 option(SDL_gpu_DISABLE_OPENGL_4 "Disable OpenGL 4.X renderer" OFF)
-option(SDL_gpu_DISABLE_GLES_1 "Disable OpenGLES 1.X renderer" OFF)
+option(SDL_gpu_DISABLE_GLES_1 "Disable OpenGLES 1.X renderer" ON)
 option(SDL_gpu_DISABLE_GLES_2 "Disable OpenGLES 2.X renderer" OFF)
-option(SDL_gpu_DISABLE_GLES_3 "Disable OpenGLES 3.X renderer" OFF)
+option(SDL_gpu_DISABLE_GLES_3 "Disable OpenGLES 3.X renderer" ON)
 
 option(SDL_gpu_USE_SYSTEM_GLEW "Attempt to use the system GLEW library (may not support GL 3+)" OFF)
 

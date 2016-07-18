@@ -15,7 +15,7 @@ int main(int argc, char* argv[])
 
 	printRenderers();
 	
-	screen = GPU_Init(800, 600, GPU_DEFAULT_INIT_FLAGS);
+	screen = GPU_Init(1366, 768, GPU_DEFAULT_INIT_FLAGS);
 	if(screen == NULL)
 		return -1;
 	
